@@ -2109,6 +2109,16 @@ fieldset .form-row > ul, fieldset .form-row .errorlist, fieldset .suit-form .for
 
 @media (max-width: 575px) { .col-multi-fields .multi-field .form-control-label, .col-multi-fields .multi-field .multi-field-content { display: block; } }
 
+/* Second-position text-input and related-field widgets: grow to fill available space */
+.col-multi-fields .multi-field.widget-AdminTextInputWidget:has(.multi-field-content),
+.col-multi-fields .multi-field.widget-RelatedFieldWidgetWrapper:has(.multi-field-content) { -webkit-box-flex: 1; -ms-flex-positive: 1; flex-grow: 1; min-width: 0; white-space: normal; overflow: hidden; }
+.col-multi-fields .multi-field.widget-AdminTextInputWidget:has(.multi-field-content) .form-control-label,
+.col-multi-fields .multi-field.widget-RelatedFieldWidgetWrapper:has(.multi-field-content) .form-control-label { float: left; white-space: nowrap; }
+.col-multi-fields .multi-field.widget-AdminTextInputWidget:has(.multi-field-content) .multi-field-content,
+.col-multi-fields .multi-field.widget-RelatedFieldWidgetWrapper:has(.multi-field-content) .multi-field-content { display: block; overflow: hidden; }
+@media (min-width: 576px) { .col-multi-fields .multi-field.widget-AdminTextInputWidget:has(.multi-field-content) .multi-field-content input, .col-multi-fields .multi-field.widget-RelatedFieldWidgetWrapper:has(.multi-field-content) .multi-field-content select { display: block; width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; } }
+@media (max-width: 575px) { .col-multi-fields .multi-field.widget-AdminTextInputWidget:has(.multi-field-content) .form-control-label, .col-multi-fields .multi-field.widget-RelatedFieldWidgetWrapper:has(.multi-field-content) .form-control-label { float: none; } }
+
 .hidden { display: none; }
 
 /* COLLAPSED FIELDSETS */
