@@ -1,11 +1,10 @@
 {% extends 'admin/base.html' %}
 {% load i18n static suit_tags %}
 
-{% block stylesheet %}{% static "suit/css/suit.css" %}{% endblock %}
-
 {% block extrastyle %}
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
     <link href='{% static "suit/css/font-awesome.min.css" %}' rel='stylesheet' type='text/css'>
+    <link href='{% static "suit/css/suit.min.css" %}?v=20260610' rel='stylesheet' type='text/css'>
 {% endblock %}
 
 {% block bodyclass %}{{ block.super|suit_body_class:request }}{% endblock %}
