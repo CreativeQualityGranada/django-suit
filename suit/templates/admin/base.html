@@ -64,7 +64,11 @@
                     <a href="{% url 'admin:password_change' %}" class="icon-link change-password-link" data-title="{% trans 'Change password' %}">{% trans 'Change password' %}</a>
                     <span class="separator">/</span>
                 {% endif %}
-                <a href="{% url 'admin:logout' %}" class="icon-link logout-link" data-title="{% trans 'Log out' %}">{% trans 'Log out' %}</a>
+                {# From Django 4.1 admin logout only accept POST: a GET responses 405. #}
+                {# The link doesn't change (same styles and icon) but sends this form. #}
+                <form id="suit-logout-form" method="post" action="{% url 'admin:logout' %}" style="display: none">{% csrf_token %}</form>
+                <a href="{% url 'admin:logout' %}" class="icon-link logout-link" data-title="{% trans 'Log out' %}"
+                   onclick="document.getElementById('suit-logout-form').submit(); return false;">{% trans 'Log out' %}</a>
             {% endblock %}
             </div>
         </div>
