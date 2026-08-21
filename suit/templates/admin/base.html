@@ -12,6 +12,8 @@
 
 {% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
+{% block dark-mode-vars %}{% endblock %}
+
 {% block branding %}
     <h1 id="site-name">
         <a href="{% url 'admin:index' %}">
